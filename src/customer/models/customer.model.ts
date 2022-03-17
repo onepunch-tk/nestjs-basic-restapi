@@ -4,5 +4,6 @@ export class Customer {
   id: string;
   name: string;
   age: number;
+  email: string;
   level: CustomerLevel;
 }
