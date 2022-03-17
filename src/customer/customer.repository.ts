@@ -12,6 +12,18 @@ export class CustomerRepository extends Repository<Customer> {
     filterDto: GetCustomerFilterDto,
   ): Promise<Customer[]> {
     const { level, search } = filterDto;
+    // const query = this.createQueryBuilder('test');
+
+    // if (level) {
+    //   query.andWhere('test.level = :level', { level });
+    // }
+
+    // if (search) {
+    //   query.andWhere(
+    //     'LOWER(test.email) LIKE LOWER(:search) OR LOWER(test.name) LIKE LOWER(:search)',
+    //   {search: `%${search}%`});
+    // }
+    // return await query.getMany();
 
     return (await this.find()).filter((c) => {
       if (
