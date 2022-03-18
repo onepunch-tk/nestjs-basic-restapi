@@ -1,15 +1,22 @@
+import { CustomerRepository } from './customer.repository';
 import { CustomerLevel } from './../common/define-enum';
 import { Injectable } from '@nestjs/common';
 import { CustomerDto } from './dtos/customer.dto';
-import { Customer } from './models/customer.model';
+import { Customer } from './../entities/customer.entity';
 import { v4 as uuid } from 'uuid';
+import { InjectRepository } from '@nestjs/typeorm';
 
 @Injectable()
 export class CustomerService {
   private customers: Customer[] = [];
 
+  constructor(
+    @InjectRepository(CustomerRepository) private readonly customerRepository: CustomerRepository,
+  ) {}
+
   getAllCustomers(): Customer[] {
-    return this.customers;
+    // return this.customers;
+    return this.customerRepository.;
   }
 
   getCustomerById(id: string): Customer {

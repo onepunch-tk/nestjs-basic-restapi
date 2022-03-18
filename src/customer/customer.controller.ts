@@ -16,7 +16,6 @@ import {
   UsePipes,
 } from '@nestjs/common';
 import { Customer } from './models/customer.model';
-import Joi, { ObjectSchema } from 'joi';
 
 @Controller('customer')
 export class CustomerController {
