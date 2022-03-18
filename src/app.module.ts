@@ -6,7 +6,7 @@ import { CustomerModule } from './customer/customer.module';
   imports: [CustomerModule, TypeOrmModule.forRoot({
     type: 'postgres',
     username: 'postgres',
-    password: 'dostm!@#',
+    password: '<your password for postgres>',
     host: 'localhost',
     port: 5432,
     autoLoadEntities: true,
